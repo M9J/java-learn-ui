@@ -1,4 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Roboto&display=swap");
+
+html {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
 body {
-  background-color: #222;
-  color: white;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  font-family: "JetBrains Mono", sans-serif;
+}
+
+app-root {
+  flex: 1;
+  display: flex;
+}
+
+:root {
+  // --color--dropbox-blue: #007ee5;
+  // --color--dropbox-silver: #7b8994;
+  // --color--dropbox-grey: #47525d;
+  // --color--dropbox-black: #3d464d;
+  // --color--white: white;
+
+  --color--dropbox-blue: #007ee5;
+  --color--dropbox-silver: #ddd;
+  --color--dropbox-grey: #eee;
+  --color--dropbox-black: #fff;
+  --color--white: black;
 }

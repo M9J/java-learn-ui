@@ -1,2 +1,18 @@
-java-learn-ui <br/>
-Response from server = {{response}}
+<div class="container">
+  <div class="file-list-container">
+    <div class="file-list">
+      <div class="list-item" (click)="newFile()">+ New file</div>
+      <div class="list-item" *ngFor="let file of fileList">
+        {{ file.fileName }}
+        {{ file.isSaving ? "*" : undefined }}
+      </div>
+    </div>
+  </div>
+  <div class="file-content">
+    <textarea
+      type="text"
+      class="file-text-area"
+      placeholder="Type here"
+    ></textarea>
+  </div>
+</div>
