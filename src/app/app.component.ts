@@ -7,8 +7,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   response: any = '';
-  api: string = 'https://m9j-java-learn-7wj5465p2rpx7-8080.githubpreview.dev/';
+  api: string = 'https://m9j-java-learn-7wj5465p2rpx7-8081.githubpreview.dev/';
   fileList: any[] = [];
+  fileContent: string = '';
+  currentFile: any = {};
 
   constructor(private http: HttpClient) {}
   ngOnInit(): void {
@@ -34,13 +36,18 @@ export class AppComponent implements OnInit {
     const nextFileNumber = this.fileList.length + 1;
     const nextFile = {
       fileName: 'Untitled-' + nextFileNumber,
-      fileContent: "",
+      fileContent: '',
       isSaving: false,
     };
     this.fileList.unshift(nextFile);
     nextFile.isSaving = true;
-    this.http.post(this.api + `file`, nextFile).subscribe(response=> {
+    this.http.post(this.api + `file`, nextFile).subscribe((response) => {
       if (response) nextFile.isSaving = false;
-    })
+    });
+  }
+
+  getFile(fileId: number) {
+    const thatFile = this.fileList.find((f) => f.fileId === fileId);
+    this.currentFile = thatFile;
   }
 }

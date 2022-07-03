@@ -2,7 +2,7 @@
   <div class="file-list-container">
     <div class="file-list">
       <div class="list-item" (click)="newFile()">+ New file</div>
-      <div class="list-item" *ngFor="let file of fileList">
+      <div class="list-item" *ngFor="let file of fileList" (click)="getFile(file.fileId)">
         {{ file.fileName }}
         {{ file.isSaving ? "*" : undefined }}
       </div>
@@ -13,6 +13,7 @@
       type="text"
       class="file-text-area"
       placeholder="Type here"
+      [value]="currentFile.fileContent ? currentFile.fileContent : ''"
     ></textarea>
   </div>
 </div>
