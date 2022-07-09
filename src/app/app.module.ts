@@ -4,10 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PlaygroundComponent } from './playground/playground.component';
+import { IframeButtonComponent } from './playground/iframe-button/iframe-button.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlaygroundComponent,
+    IframeButtonComponent
   ],
   imports: [
     BrowserModule,
