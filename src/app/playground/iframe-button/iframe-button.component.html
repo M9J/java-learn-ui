@@ -1,2 +1,7 @@
-<iframe class="bopFrame" src="">
-</iframe>
+<iframe
+  *ngIf="isIframeEnabled"
+  id="bopFrame"
+  src="./assets/templates/example/index.html"
+></iframe>
+
+<button (click)="showIframe()">Enable Iframe</button>
